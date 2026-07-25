@@ -11,5 +11,5 @@ public class Destino
     public string Nombre { get; set; } = string.Empty;
 
     public int PaisId { get; set; }
-    public Pais Pais { get; set; } = null!;
+    public Pais? Pais { get; set; } = null!;
 }

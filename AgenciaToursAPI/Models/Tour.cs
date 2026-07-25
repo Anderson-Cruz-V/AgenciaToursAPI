@@ -36,15 +36,15 @@ public class Tour
     [Range(1, int.MaxValue)]
     public int PaisId { get; set; }
 
-    public Pais Pais { get; set; } = null!;
+    public Pais? Pais { get; set; }
 
     [Range(1, int.MaxValue)]
     public int DestinoId { get; set; }
 
-    public Destino Destino { get; set; } = null!;
+    public Destino? Destino { get; set; }
 
     [Range(1, int.MaxValue)]
     public int CategoriaTourId { get; set; }
 
-    public CategoriaTour CategoriaTour { get; set; } = null!;
+    public CategoriaTour? CategoriaTour { get; set; }
 }

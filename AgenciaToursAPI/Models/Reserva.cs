@@ -21,10 +21,13 @@ public class Reserva
     [Range(1, int.MaxValue)]
     public int ClienteId { get; set; }
 
-    public Cliente Cliente { get; set; } = null!;
+    public Cliente? Cliente { get; set; }
 
     [Range(1, int.MaxValue)]
     public int TourId { get; set; }
 
-    public Tour Tour { get; set; } = null!;
+    public Tour? Tour { get; set; }
 }
+
+
+
