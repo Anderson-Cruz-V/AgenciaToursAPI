@@ -19,8 +19,10 @@ public class Tour
 
     public decimal Itbis { get; set; }
 
+    [Required]
     public DateTime Fecha { get; set; }
 
+    [Required]
     public TimeSpan Hora { get; set; }
 
     [Range(1, int.MaxValue)]
@@ -31,6 +33,7 @@ public class Tour
 
     public DateTime FechaHoraFin { get; set; }
 
+    [StringLength(30)]
     public string Estado { get; set; } = string.Empty;
 
     [Range(1, int.MaxValue)]
@@ -47,4 +50,14 @@ public class Tour
     public int CategoriaTourId { get; set; }
 
     public CategoriaTour? CategoriaTour { get; set; }
+
+    [Range(1, int.MaxValue)]
+    public int GuiaTuristicoId { get; set; }
+
+    public GuiaTuristico? GuiaTuristico { get; set; }
+
+    [Range(1, int.MaxValue)]
+    public int TransporteId { get; set; }
+
+    public Transporte? Transporte { get; set; }
 }

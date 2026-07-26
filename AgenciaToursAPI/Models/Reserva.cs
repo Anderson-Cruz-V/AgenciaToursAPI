@@ -11,10 +11,8 @@ public class Reserva
     [Range(1, 100)]
     public int CantidadPersonas { get; set; }
 
-    [Range(0, double.MaxValue)]
     public decimal Total { get; set; }
 
-    [Required]
     [StringLength(30)]
     public string Estado { get; set; } = string.Empty;
 
@@ -27,7 +25,10 @@ public class Reserva
     public int TourId { get; set; }
 
     public Tour? Tour { get; set; }
+
+    [Range(1, int.MaxValue)]
+    public int MetodoPagoId { get; set; }
+
+    public MetodoPago? MetodoPago { get; set; }
 }
-
-
 

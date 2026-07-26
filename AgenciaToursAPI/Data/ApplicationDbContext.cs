@@ -17,6 +17,14 @@ public class ApplicationDbContext : DbContext
     public DbSet<Cliente> Clientes { get; set; } = null!;
     public DbSet<Reserva> Reservas { get; set; } = null!;
 
+    public DbSet<GuiaTuristico> GuiasTuristicos { get; set; }
+
+    public DbSet<Transporte> Transportes { get; set; }
+
+    public DbSet<MetodoPago> MetodosPago { get; set; }
+
+    public DbSet<Usuario> Usuarios { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

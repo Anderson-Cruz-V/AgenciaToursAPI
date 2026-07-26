@@ -41,8 +41,15 @@ namespace AgenciaToursAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CrearDestino(Destino destino)
+        public IActionResult PostDestino(Destino destino)
         {
+            var paisExiste = _context.Paises.Any(p => p.Id == destino.PaisId);
+
+            if (!paisExiste)
+            {
+                return BadRequest("El país indicado no existe.");
+            }
+
             _context.Destinos.Add(destino);
             _context.SaveChanges();
 
@@ -50,11 +57,23 @@ namespace AgenciaToursAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult ActualizarDestino(int id, Destino destino)
+        public IActionResult PutDestino(int id, Destino destino)
         {
             if (id != destino.Id)
             {
-                return BadRequest();
+                return BadRequest("El Id de la URL no coincide con el Id del destino.");
+            }
+
+            if (!_context.Paises.Any(p => p.Id == destino.PaisId))
+            {
+                return BadRequest("El país indicado no existe.");
+            }
+
+            var destinoExiste = _context.Destinos.Any(d => d.Id == id);
+
+            if (!destinoExiste)
+            {
+                return NotFound("El destino no existe.");
             }
 
             _context.Destinos.Update(destino);
