@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AgenciaToursAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ToursController : ControllerBase
